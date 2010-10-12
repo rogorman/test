@@ -49,6 +49,10 @@ public class baseBallDbAdapter  {
      */
     private static final String DATABASE_CREATE =
         "create table players (_id integer primary key autoincrement, "
+        + "name text not null);" +
+        "create table clubs (_id integer primary key autoincrement, "
+        + "name text not null); " +
+        "create table teams (_id integer primary key autoincrement, "
         + "name text not null);";
 
     private static final String DATABASE_NAME = "baseBallData";
