@@ -1,0 +1,22 @@
+
+
+Screen 1
+new game --> Screen 2
+continue game
+view old games
+
+Screen 2
+
+Select 1st Club (Add new club)
+Select 1st team (add new team to club)
+select 2nd club
+select 2nd team
+Next
+
+Screen 3
+Select players on teams
+
+Finish
+
+Screen 4
+Game Screen

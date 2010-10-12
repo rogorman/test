@@ -78,6 +78,8 @@ public class baseBallDbAdapter  {
             Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
             db.execSQL("DROP TABLE IF EXISTS players");
+            db.execSQL("DROP TABLE IF EXISTS clubs");
+            db.execSQL("DROP TABLE IF EXISTS teams");
             onCreate(db);
         }
     }

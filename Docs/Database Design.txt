@@ -1,0 +1,12 @@
+Tables:
+
+User
+	Players - IDplayer, Name, IDClub, DOB
+	Teams - IDteam, Name, Club
+	Clubs - IDclub, Name
+	Game - IDgame, IDclubs, IDteams, IDplayers
+	PlayerStats - IDplstat, IDplayer, IDgame, stats
+
+Reference
+	Statistics
+	
