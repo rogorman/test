@@ -13,25 +13,36 @@ public class BaseballMath extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        Button addPlayers = (Button) findViewById(R.id.addplayers);
-        Button listPlayers = (Button) findViewById(R.id.listplayers);
+        Button newGame = (Button) findViewById(R.id.newgame);
+        Button continueGame = (Button) findViewById(R.id.continuegame);
+        Button viewOldGame = (Button) findViewById(R.id.viewoldgame);
         
-        addPlayers.setOnClickListener(new View.OnClickListener() {
+        newGame.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent intent = new Intent(v.getContext(), PlayersAddActivity.class);
+				Intent intent = new Intent(v.getContext(), NewGameActivity.class);
                 startActivityForResult(intent, 0);
 			}
 		});
         
-        listPlayers.setOnClickListener(new View.OnClickListener() {
+        continueGame.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent intent = new Intent(v.getContext(), ListPlayersActivity.class);
+				Intent intent = new Intent(v.getContext(), ContinueGameActivity.class);
                 startActivityForResult(intent, 0);
 				
 			}
 		});
+        
+        viewOldGame.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), ViewOldGameActivity.class);
+                startActivityForResult(intent, 0);
+				
+			}
+		});
+        
         
 //        Resources res = getResources(); // Resource object to get Drawables
 //        TabHost tabHost = getTabHost();  // The activity TabHost

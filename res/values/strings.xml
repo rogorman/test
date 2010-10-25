@@ -2,6 +2,10 @@
 <resources>
     <string name="hello">Hello World, BaseballMath!</string>
     <string name="app_name">Baseball, Math</string>
+    <string name="newgame">New Game</string>
+    <string name="continuegame">Continue Game</string>
+    <string name="viewoldgame">View Old Game</string>
+    <string name="selectclub">Select Club</string>
     <string name="listplayers">List Players</string>
     <string name="addplayers">Add Players</string>
     <string name="no_players">No Players Added</string>

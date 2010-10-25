@@ -11,6 +11,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewGameActivity"></activity>
+        <activity android:name=".ContinueGameActivity"></activity>
+        <activity android:name=".ViewOldGameActivity"></activity>
         <activity android:name=".PlayersAddActivity"></activity>
         <activity android:name=".ListPlayersActivity"></activity>
     </application>
