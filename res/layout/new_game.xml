@@ -22,7 +22,7 @@
 			android:text="@string/clubselected" />
 	</LinearLayout>
 	
-		<LinearLayout android:id="@+id/teamsection" android:orientation="horizontal"
+	<LinearLayout android:id="@+id/teamsection" android:orientation="horizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 		<Button android:id="@+id/selectteam"
@@ -37,6 +37,23 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:text="@string/teamselected" />
+	</LinearLayout>
+	
+	<LinearLayout android:id="@+id/playersection" android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<Button android:id="@+id/selectplayer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/selectplayer"/>
+	    <Button android:id="@+id/addplayer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/addplayer"/>
+	    <TextView android:id="@+id/playerselected" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/playerselected" />
 	</LinearLayout>
 
 

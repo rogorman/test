@@ -16,16 +16,19 @@ public class NewGameActivity extends Activity{
 	
 	private static final int clubs = 0; 
 	private static final int teams = 1;
-	private static final int GONE = 8;
 	
 	private baseBallDbAdapter mDbHelper;
 	private LinearLayout teamSection;
+	private LinearLayout playerSection;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_game);
+        
         teamSection = (LinearLayout) findViewById(R.id.teamsection);
-        teamSection.setVisibility(GONE);
+        teamSection.setVisibility(View.GONE);
+        playerSection = (LinearLayout) findViewById(R.id.playersection);
+        playerSection.setVisibility(View.GONE);
         
         mDbHelper = new baseBallDbAdapter(this);
         mDbHelper.open();
@@ -64,7 +67,7 @@ public class NewGameActivity extends Activity{
 				    	TextView clubSelected = (TextView) findViewById(R.id.clubselected);
 				    	((Cursor) clubsCursor).moveToPosition(item);
 				    	clubSelected.setText(((Cursor) clubsCursor).getString(((Cursor) clubsCursor).getColumnIndex(baseBallDbAdapter.KEY_NAME)));
-				    	teamSection.setVisibility(0);
+				    	teamSection.setVisibility(View.VISIBLE);
 				    }
 				}, baseBallDbAdapter.KEY_NAME);
 	

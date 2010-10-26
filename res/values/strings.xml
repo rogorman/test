@@ -15,6 +15,10 @@
     <string name="addteam">Add Team</string>
     <string name="teamselected"></string>
     
+    <string name="selectplayer">Select Player</string>
+    <string name="addplayer">Add Player</string>
+    <string name="playerselected"></string>
+
     <string name="listplayers">List Players</string>
     <string name="addplayers">Add Players</string>
     <string name="no_players">No Players Added</string>
