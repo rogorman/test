@@ -1,16 +1,14 @@
 package com.ogorman.baseballmath;
 
-import com.ogorman.baseballmath.R;
-import com.ogorman.baseballmath.R.id;
-import com.ogorman.baseballmath.R.layout;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class PlayersAddActivity extends Activity{
+import com.ogorman.baseballmath.R;
+
+public class ClubsAddActivity extends Activity{
 	
     private EditText mNameText;
     private Long mRowId;
@@ -20,15 +18,14 @@ public class PlayersAddActivity extends Activity{
         super.onCreate(savedInstanceState);
         	mDbHelper = new baseBallDbAdapter(this);
         	mDbHelper.open();
-//        TextView textview = new TextView(this);
-//        textview.setText("This is the Players Add tab");
-        	setContentView(R.layout.add_player);
+
+        	setContentView(R.layout.add_club);
         	
-        	Button confirmNewPlayer = (Button) findViewById(R.id.savenewplayer);
-        	Button cancelNewPlayer = (Button) findViewById(R.id.cancelnewplayer);
-        	mNameText = (EditText) findViewById(R.id.newplayerentry); 
+        	Button confirmNewClub = (Button) findViewById(R.id.savenewclub);
+        	Button cancelNewClub = (Button) findViewById(R.id.cancelnewclub);
+        	mNameText = (EditText) findViewById(R.id.newclubentry); 
         	
-        	confirmNewPlayer.setOnClickListener(new View.OnClickListener() {
+        	confirmNewClub.setOnClickListener(new View.OnClickListener() {
 				
                 public void onClick(View view) {
                     //setResult(RESULT_OK);
@@ -36,7 +33,7 @@ public class PlayersAddActivity extends Activity{
                 }
 			});
         	
-        	cancelNewPlayer.setOnClickListener(new View.OnClickListener() {
+        	cancelNewClub.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
@@ -65,7 +62,7 @@ public class PlayersAddActivity extends Activity{
 		String name = mNameText.getText().toString();
 		
 		//if (mRowId == null) {
-			long id = mDbHelper.createPlayer(name);
+			long id = mDbHelper.createClub(name);
 			if (id > 0) {	mRowId = id; }
 		//} else
 		//{

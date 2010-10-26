@@ -1,5 +1,9 @@
 package com.ogorman.baseballmath;
 
+import com.ogorman.baseballmath.R;
+import com.ogorman.baseballmath.R.id;
+import com.ogorman.baseballmath.R.layout;
+
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;

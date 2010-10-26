@@ -47,17 +47,16 @@ public class baseBallDbAdapter  {
     /**
      * Database creation sql statement
      */
-    private static final String DATABASE_CREATE =
-        "create table players (_id integer primary key autoincrement, "
-        + "name text not null);" +
-        "create table clubs (_id integer primary key autoincrement, "
-        + "name text not null); " +
-        "create table teams (_id integer primary key autoincrement, "
-        + "name text not null);";
+    private static final String DATABASE_CREATE_PLAYERS = "create table players (_id integer primary key autoincrement, name text not null);";
+    private static final String DATABASE_CREATE_CLUBS = "create table clubs (_id integer primary key autoincrement, name text not null);";
+    private static final String DATABASE_CREATE_TEAMS = "create table teams (_id integer primary key autoincrement, name text not null);";
 
     private static final String DATABASE_NAME = "baseBallData";
-    private static final String DATABASE_TABLE = "players";
-    private static final int DATABASE_VERSION = 2;
+    private static final String DB_TABLE_PLAYERS = "players";
+    private static final String DB_TABLE_CLUBS = "clubs";
+    private static final String DB_TABLE_TEAMS = "teams";
+    
+    private static final int DATABASE_VERSION = 3;
 
     private final Context mCtx;
 
@@ -70,7 +69,9 @@ public class baseBallDbAdapter  {
         @Override
         public void onCreate(SQLiteDatabase db) {
 
-            db.execSQL(DATABASE_CREATE);
+            db.execSQL(DATABASE_CREATE_PLAYERS);
+            db.execSQL(DATABASE_CREATE_CLUBS);
+            db.execSQL(DATABASE_CREATE_TEAMS);
         }
 
         @Override
@@ -127,7 +128,7 @@ public class baseBallDbAdapter  {
         ContentValues initialValues = new ContentValues();
         initialValues.put(KEY_NAME, name);
 
-        return mDb.insert(DATABASE_TABLE, null, initialValues);
+        return mDb.insert(DB_TABLE_PLAYERS, null, initialValues);
     }
 
     /**
@@ -138,7 +139,7 @@ public class baseBallDbAdapter  {
      */
     public boolean deletePlayer(long rowId) {
 
-        return mDb.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+        return mDb.delete(DB_TABLE_PLAYERS, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
     /**
@@ -148,7 +149,7 @@ public class baseBallDbAdapter  {
      */
     public Cursor fetchAllPlayers() {
 
-        return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_NAME}, null, null, null, null, null);
+        return mDb.query(DB_TABLE_PLAYERS, new String[] {KEY_ROWID, KEY_NAME}, null, null, null, null, null);
     }
 
     /**
@@ -162,7 +163,7 @@ public class baseBallDbAdapter  {
 
         Cursor mCursor =
 
-            mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
+            mDb.query(true, DB_TABLE_PLAYERS, new String[] {KEY_ROWID,
                     KEY_NAME}, KEY_ROWID + "=" + rowId, null,
                     null, null, null, null);
         if (mCursor != null) {
@@ -186,6 +187,46 @@ public class baseBallDbAdapter  {
         ContentValues args = new ContentValues();
         args.put(KEY_NAME, name);
 
-        return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+        return mDb.update(DB_TABLE_PLAYERS, args, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+    
+    /** Clubs **/
+    public long createClub(String clubName) {
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_NAME, clubName);
+
+        return mDb.insert(DB_TABLE_CLUBS, null, initialValues);
+    }
+    
+    public boolean updateClub(long rowId, String clubName) {
+        ContentValues args = new ContentValues();
+        args.put(KEY_NAME, clubName);
+
+        return mDb.update(DB_TABLE_CLUBS, args, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+    
+    public Cursor fetchAllClubs() {
+
+        return mDb.query(DB_TABLE_CLUBS, new String[] {KEY_ROWID, KEY_NAME}, null, null, null, null, null);
+    }
+    
+    /** Teams **/
+    public long createTeam(String teamName) {
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_NAME, teamName);
+
+        return mDb.insert(DB_TABLE_TEAMS, null, initialValues);
+    }
+    
+    public boolean updateTeam(long rowId, String teamName) {
+        ContentValues args = new ContentValues();
+        args.put(KEY_NAME, teamName);
+
+        return mDb.update(DB_TABLE_TEAMS, args, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+    
+    public Cursor fetchAllTeams() {
+
+        return mDb.query(DB_TABLE_TEAMS, new String[] {KEY_ROWID, KEY_NAME}, null, null, null, null, null);
     }
 }

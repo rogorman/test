@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.ogorman.baseballmath.R;
+
 public class BaseballMath extends Activity {
     /** Called when the activity is first created. */
     @Override

@@ -12,9 +12,32 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="@string/selectclub"/>
-		<EditText android:id="@+id/clubselected" 
-		 	 android:layout_width="wrap_content"
-			android:layout_height="wrap_content" />
+	    <Button android:id="@+id/addclub"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/addclub"/>
+	    <TextView android:id="@+id/clubselected" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/clubselected" />
 	</LinearLayout>
+	
+		<LinearLayout android:id="@+id/teamsection" android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<Button android:id="@+id/selectteam"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/selectteam"/>
+	    <Button android:id="@+id/addteam"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/addteam"/>
+	    <TextView android:id="@+id/teamselected" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:text="@string/teamselected" />
+	</LinearLayout>
+
 
 </LinearLayout>
