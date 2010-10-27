@@ -1,5 +1,3 @@
-
-
 Screen 1
 new game --> Screen 2
 continue game
@@ -20,3 +18,15 @@ Finish
 
 Screen 4
 Game Screen
+
+
+Pitcher (P)
+Catcher (C)
+First baseman (1B)
+Second baseman (2B)
+Third baseman (3B)
+Shortstop (SS)
+Left fielder (LF)
+Center fielder (CF)
+Right fielder (RF)
+
